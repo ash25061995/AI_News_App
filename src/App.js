@@ -15,6 +15,9 @@ const App = () => {
                         setNewsArticles(data)
                 }else if(command==='highlight'){
                     setActiveArticle((prevState)=>prevState+1)
+                }else if(command==='back'){
+                    setNewsArticles(data)
+                    setActiveArticle(-1)
                 }
             }
         })
