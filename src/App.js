@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import alanBtn from '@alan-ai/alan-sdk-web'
 import {alanKey} from './alanKey'
 import NewsCards from './components/NewsCards/NewsCards';
+import alan from './assets/images/alan.jpg'
 
 const App = () => {
     const [newsArticles,setNewsArticles]=useState([])
@@ -14,6 +15,7 @@ const App = () => {
                     console.log(data)
                         setNewsArticles(data)
                 }else if(command==='highlight'){
+                
                     setActiveArticle((prevState)=>prevState+1)
                 }else if(command==='back'){
                     setNewsArticles(data)
@@ -25,7 +27,7 @@ const App = () => {
     return (
         <div>
             <div className="alan-logo">
-                <img src="https://alan.app/voice/images/previews/preview.jpg" alt="alan logo"/>
+                <img src={alan} alt="alan logo"/>
             </div>
             <NewsCards articles={newsArticles} activeArticle={activeArticle}/>
         </div>
